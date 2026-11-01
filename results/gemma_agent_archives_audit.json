@@ -1,0 +1,32 @@
+{
+  "audit_type": "LOCAL_ARCHIVE_STRUCTURE_ONLY",
+  "readme": "Validated actual archive agent.yaml files on owner's machine on 2026-11-01; no official successful repair evaluation implied.",
+  "source": "KAGGLE_GEMMA4 existing owned ZIP artifacts",
+  "variants": [
+    {
+      "variant": "B22_verified",
+      "zip_sha256": "ea6ed2c2b59a651473a0e5f4f6b4de2781035e7e9dd4dde6664bcad394930e27",
+      "zip_bytes": 2089,
+      "model": "gemma-4-31b-it-qat-w4a16-ct",
+      "tool_count": 6,
+      "scored_success": null
+    },
+    {
+      "variant": "B23_candidate_unscored",
+      "zip_sha256": "7e145019021cdd94a9846fdcb6a2c1780ca67c234a656ec0435dfd6631f464c3",
+      "zip_bytes": 2221,
+      "model": "gemma-4-31b-it-qat-w4a16-ct",
+      "tool_count": 8,
+      "scored_success": null
+    },
+    {
+      "variant": "B26_conditional_graph_candidate_unscored",
+      "zip_sha256": "e51127643759eaefd1a491f33b2a9d220c1ad7981e9f557e0bc013209f574f5a",
+      "zip_bytes": 2407,
+      "model": "gemma-4-31b-it-qat-w4a16-ct",
+      "tool_count": 9,
+      "scored_success": null
+    }
+  ],
+  "warning": "Tool-list size changes across variants, so differences cannot be attributed to prompt routing alone. No official matched benchmark A/B recorded."
+}
