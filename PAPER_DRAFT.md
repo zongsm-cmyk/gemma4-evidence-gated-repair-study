@@ -87,6 +87,12 @@ At 50% injected graph faults, confidence-gated search used 1.3896 calls/query on
 
 Machine-readable follow-up receipts: [PostgreSQL, seed 20261111](results/postgres_holdout_seed_20261111.json) and [Kaggle CLI, seed 20261112](results/kaggle_cli_holdout_seed_20261112.json). Receipt arithmetic and provenance checks are supplied in [the test suite](studies/test_research_receipts.py).
 
+### 3.4 Official competition status and non-comparability (verified 1 November 2026)
+
+The authenticated Kaggle submission page separately reports **Gemma4 B24 E4B Budgeted Agent, version 1: Succeeded, public score 0.03**. This is an official score for the owner's B24 E4B entry, **not** an outcome of the simulated retrieval study above and not evidence that the confidence gate improves patch acceptance. The **Gemma4 B25 Apache2 Baseline Reproduction, version 1** is displayed as **Notebook Running** with **no public score** at the time of this check. B25 reproduces and credits a separate Apache-2.0 reference, and the reference author's score must not be attributed to this account. The B26 conditional-graph ablation has a completed private packaging notebook but **no scored competition submission**. Historical entries remain exception/timeout cases.
+
+These are not matched experiments: B24 uses the E4B model, B25 uses a 31B model, and their tool budgets/prompts differ. Therefore no causal effect of retrieval gating, verification, or model size can be inferred from their current leaderboard statuses. Official page: https://www.kaggle.com/competitions/gemma-4-developer-agent/submissions . The separate Paper Track Writeup remains **4/6 complete and not submitted** as of this check. This section records provenance and prevents the older paper-track draft's statement that no successful public score exists from being reused as current evidence.
+
 ## 4. Threats to validity
 
 1. **Synthetic faults:** the graph candidates and confidences are simulated. Real model-generated retrieval may have very different error distributions.
