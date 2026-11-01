@@ -72,6 +72,21 @@ This is a design insight, not a score. The local B22/B23/B26 prompts express dif
 
 A separate audit of three existing, locally generated agent archives confirmed that **B22, B23 and B26 all reference the same `gemma-4-31b-it-qat-w4a16-ct` model**, but they expose different numbers of tools (6, 8 and 9 respectively). Archive SHA-256 digests and package sizes are captured in [the structural audit](results/gemma_agent_archives_audit.json). This is a reproducibility check, not task-level evaluation. Because available tools differ, future performance comparisons must explicitly control or stratify the tool set before attributing any effect to prompt policy. B23 and B26 remain unscored on the official repair benchmark.
 
+### 3.3 Independent-seed stress test (additional simulation)
+
+To test whether the identical cross-corpus numbers in Section 3 were merely an artifact of reusing the same pseudo-random fault schedule, we reran the **same simulator** with different fault seeds on the two source trees: `20261111` for the PostgreSQL repository and `20261112` for Kaggle CLI. Each new run reused 48 unique public AST symbols and 10 repetitions at five fault levels, adding **4,800 simulated decisions** (9,600 across initial and follow-up runs). This is a sensitivity analysis of the random fault schedule, not a held-out Gemma model or a new retrieval model.
+
+| Fault rate | PostgreSQL graph-only | PostgreSQL gated | Kaggle CLI graph-only | Kaggle CLI gated |
+| ---: | ---: | ---: | ---: | ---: |
+| 10% | 89.58% | 97.29% | 89.58% | 96.46% |
+| 25% | 75.42% | 92.08% | 77.92% | 94.79% |
+| 50% | 49.17% | 88.12% | 49.79% | 85.42% |
+| 75% | 23.33% | 78.75% | 24.58% | 80.42% |
+
+At 50% injected graph faults, confidence-gated search used 1.3896 calls/query on PostgreSQL and 1.3562 on Kaggle CLI, versus exactly 2.0000 for the unconditional policy. The advantage over graph-only and the residual vulnerability to confident-wrong results remain visible across these seeds. The differing numbers demonstrate random-schedule sensitivity; because faults are synthetically injected and the symbol tasks are reused, **neither the additional decisions nor the two source trees establish external validation or real software-repair gains**.
+
+Machine-readable follow-up receipts: [PostgreSQL, seed 20261111](results/postgres_holdout_seed_20261111.json) and [Kaggle CLI, seed 20261112](results/kaggle_cli_holdout_seed_20261112.json). Receipt arithmetic and provenance checks are supplied in [the test suite](studies/test_research_receipts.py).
+
 ## 4. Threats to validity
 
 1. **Synthetic faults:** the graph candidates and confidences are simulated. Real model-generated retrieval may have very different error distributions.
