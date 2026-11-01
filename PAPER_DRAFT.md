@@ -68,6 +68,10 @@ The result supports a bounded control **hypothesis**: avoid redundant lexical se
 
 This is a design insight, not a score. The local B22/B23/B26 prompts express different routing and verification policies, but official head-to-head Gemma 4 evaluator outcomes have not been obtained. Prompt archive construction, ZIP validation, and a Kaggle notebook running successfully are not equivalent to resolving software bugs. We do not claim the hidden repair benchmark was improved.
 
+### 3.2 Structural audit of Gemma variants
+
+A separate audit of three existing, locally generated agent archives confirmed that **B22, B23 and B26 all reference the same `gemma-4-31b-it-qat-w4a16-ct` model**, but they expose different numbers of tools (6, 8 and 9 respectively). Archive SHA-256 digests and package sizes are captured in [the structural audit](results/gemma_agent_archives_audit.json). This is a reproducibility check, not task-level evaluation. Because available tools differ, future performance comparisons must explicitly control or stratify the tool set before attributing any effect to prompt policy. B23 and B26 remain unscored on the official repair benchmark.
+
 ## 4. Threats to validity
 
 1. **Synthetic faults:** the graph candidates and confidences are simulated. Real model-generated retrieval may have very different error distributions.
