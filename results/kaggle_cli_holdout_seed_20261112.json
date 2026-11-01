@@ -1,0 +1,455 @@
+{
+    "study":  "Confidence-gated code localization under injected graph failures",
+    "experiment_type":  "SIMULATED retrieval faults over real AST symbols",
+    "not":  [
+                "Gemma model inference",
+                "real Kaggle graph retrieval",
+                "patch acceptance",
+                "SWE-bench score"
+            ],
+    "repository":  "https://github.com/Kaggle/kaggle-cli",
+    "source_commit":  "577e21c17ca2016e4d803561ce9a4ed69ec119bd",
+    "seed":  20261112,
+    "symbols_per_replicate":  48,
+    "repeats_per_rate":  10,
+    "total_decisions":  2400,
+    "methods":  {
+                    "graph_only":  "single graph result, no fallback",
+                    "unconditional_fallback":  "graph then exact unique symbol lookup",
+                    "confidence_gated":  "graph then exact symbol lookup if confidence \u003c 0.70",
+                    "faults":  "wrong symbol returned with 25% misleading high confidence"
+                },
+    "corpus_audit":  {
+                         "files_parsed_or_attempted":  815,
+                         "unparsable_files":  0,
+                         "function_definitions":  9390,
+                         "unique_symbols":  3350
+                     },
+    "selected_ground_truth":  [
+                                  {
+                                      "symbol":  "getReplacementCharacter",
+                                      "file":  "bleach/_vendor/html5lib/_ihatexml.py",
+                                      "line":  271
+                                  },
+                                  {
+                                      "symbol":  "plaintextState",
+                                      "file":  "bleach/_vendor/html5lib/_tokenizer.py",
+                                      "line":  360
+                                  },
+                                  {
+                                      "symbol":  "startTagCloseP",
+                                      "file":  "bleach/_vendor/html5lib/html5parser.py",
+                                      "line":  1041
+                                  },
+                                  {
+                                      "symbol":  "startTagRawtext",
+                                      "file":  "bleach/_vendor/html5lib/html5parser.py",
+                                      "line":  1240
+                                  },
+                                  {
+                                      "symbol":  "filter_alt_coherence_matches",
+                                      "file":  "charset_normalizer/cd.py",
+                                      "line":  383
+                                  },
+                                  {
+                                      "symbol":  "testIsAProxy",
+                                      "file":  "colorama/tests/ansitowin32_test.py",
+                                      "line":  22
+                                  },
+                                  {
+                                      "symbol":  "testInitDoesntWrapOnNonWindows",
+                                      "file":  "colorama/tests/initialise_test.py",
+                                      "line":  57
+                                  },
+                                  {
+                                      "symbol":  "test_withPycharmTTYOverride",
+                                      "file":  "colorama/tests/isatty_test.py",
+                                      "line":  31
+                                  },
+                                  {
+                                      "symbol":  "StringSizer",
+                                      "file":  "google/protobuf/internal/encoder.py",
+                                      "line":  248
+                                  },
+                                  {
+                                      "symbol":  "bench_assign_slice_int32",
+                                      "file":  "google/protobuf/internal/message_benchmark.py",
+                                      "line":  231
+                                  },
+                                  {
+                                      "symbol":  "MessageToDict",
+                                      "file":  "google/protobuf/json_format.py",
+                                      "line":  127
+                                  },
+                                  {
+                                      "symbol":  "DiscardUnknownFields",
+                                      "file":  "google/protobuf/message.py",
+                                      "line":  391
+                                  },
+                                  {
+                                      "symbol":  "RegisterEnumDescriptor",
+                                      "file":  "google/protobuf/symbol_database.py",
+                                      "line":  81
+                                  },
+                                  {
+                                      "symbol":  "exclusiveMinimum",
+                                      "file":  "jsonschema/_keywords.py",
+                                      "line":  127
+                                  },
+                                  {
+                                      "symbol":  "redefine_many",
+                                      "file":  "jsonschema/_types.py",
+                                      "line":  142
+                                  },
+                                  {
+                                      "symbol":  "to_unittest_method",
+                                      "file":  "jsonschema/tests/_suite.py",
+                                      "line":  231
+                                  },
+                                  {
+                                      "symbol":  "test_it_calls_super_and_sets_args",
+                                      "file":  "jsonschema/tests/test_exceptions.py",
+                                      "line":  530
+                                  },
+                                  {
+                                      "symbol":  "test_list_with_none_unequal",
+                                      "file":  "jsonschema/tests/test_utils.py",
+                                      "line":  102
+                                  },
+                                  {
+                                      "symbol":  "test_additionalItems_multiple_failures",
+                                      "file":  "jsonschema/tests/test_validators.py",
+                                      "line":  400
+                                  },
+                                  {
+                                      "symbol":  "test_ref_resolvers_may_have_boolean_schemas_stored",
+                                      "file":  "jsonschema/tests/test_validators.py",
+                                      "line":  2001
+                                  },
+                                  {
+                                      "symbol":  "descend",
+                                      "file":  "jsonschema/validators.py",
+                                      "line":  396
+                                  },
+                                  {
+                                      "symbol":  "parse_rmd_options",
+                                      "file":  "jupytext/cell_metadata.py",
+                                      "line":  192
+                                  },
+                                  {
+                                      "symbol":  "identical_format_path",
+                                      "file":  "jupytext/formats.py",
+                                      "line":  495
+                                  },
+                                  {
+                                      "symbol":  "split_frontmatter",
+                                      "file":  "jupytext/jupytext.py",
+                                      "line":  320
+                                  },
+                                  {
+                                      "symbol":  "competition_get_submission_limits_cli",
+                                      "file":  "kaggle/api/kaggle_api_extended.py",
+                                      "line":  2626
+                                  },
+                                  {
+                                      "symbol":  "competition_list_files_cli",
+                                      "file":  "kaggle/api/kaggle_api_extended.py",
+                                      "line":  2673
+                                  },
+                                  {
+                                      "symbol":  "dataset_create_version",
+                                      "file":  "kaggle/api/kaggle_api_extended.py",
+                                      "line":  5833
+                                  },
+                                  {
+                                      "symbol":  "kernels_list_files_cli",
+                                      "file":  "kaggle/api/kaggle_api_extended.py",
+                                      "line":  7060
+                                  },
+                                  {
+                                      "symbol":  "kernels_output_cli",
+                                      "file":  "kaggle/api/kaggle_api_extended.py",
+                                      "line":  7598
+                                  },
+                                  {
+                                      "symbol":  "list_benchmark_tasks",
+                                      "file":  "kagglesdk/benchmarks/services/benchmark_tasks_api_service.py",
+                                      "line":  57
+                                  },
+                                  {
+                                      "symbol":  "list_hackathon_write_ups",
+                                      "file":  "kagglesdk/competitions/services/hackathon_api_service.py",
+                                      "line":  22
+                                  },
+                                  {
+                                      "symbol":  "get_env",
+                                      "file":  "kagglesdk/kaggle_env.py",
+                                      "line":  45
+                                  },
+                                  {
+                                      "symbol":  "errorCode",
+                                      "file":  "kagglesdk/models/types/model_api_service.py",
+                                      "line":  682
+                                  },
+                                  {
+                                      "symbol":  "clientSecretExpiresAt",
+                                      "file":  "kagglesdk/security/types/oauth_service.py",
+                                      "line":  899
+                                  },
+                                  {
+                                      "symbol":  "srcCharCode",
+                                      "file":  "markdown_it/ruler.py",
+                                      "line":  48
+                                  },
+                                  {
+                                      "symbol":  "skipOrderedListMarker",
+                                      "file":  "markdown_it/rules_block/list.py",
+                                      "line":  37
+                                  },
+                                  {
+                                      "symbol":  "ios_platforms",
+                                      "file":  "packaging/tags.py",
+                                      "line":  775
+                                  },
+                                  {
+                                      "symbol":  "resolver_with_root",
+                                      "file":  "referencing/_core.py",
+                                      "line":  586
+                                  },
+                                  {
+                                      "symbol":  "test_anchor_in_nonexistent_resource",
+                                      "file":  "referencing/tests/test_core.py",
+                                      "line":  207
+                                  },
+                                  {
+                                      "symbol":  "sha_utf8",
+                                      "file":  "requests/auth.py",
+                                      "line":  184
+                                  },
+                                  {
+                                      "symbol":  "resolve_redirects",
+                                      "file":  "requests/sessions.py",
+                                      "line":  186
+                                  },
+                                  {
+                                      "symbol":  "callable",
+                                      "file":  "six.py",
+                                      "line":  560
+                                  },
+                                  {
+                                      "symbol":  "add_article",
+                                      "file":  "traitlets/utils/descriptions.py",
+                                      "line":  145
+                                  },
+                                  {
+                                      "symbol":  "is_cross_origin_isolated",
+                                      "file":  "urllib3/contrib/emscripten/fetch.py",
+                                      "line":  414
+                                  },
+                                  {
+                                      "symbol":  "is_retry",
+                                      "file":  "urllib3/util/retry.py",
+                                      "line":  423
+                                  },
+                                  {
+                                      "symbol":  "safe_dump_all",
+                                      "file":  "yaml/__init__.py",
+                                      "line":  255
+                                  },
+                                  {
+                                      "symbol":  "parse_block_mapping_first_key",
+                                      "file":  "yaml/parser.py",
+                                      "line":  422
+                                  },
+                                  {
+                                      "symbol":  "check_printable",
+                                      "file":  "yaml/reader.py",
+                                      "line":  138
+                                  }
+                              ],
+    "results_by_fault_rate":  [
+                                  {
+                                      "injected_graph_failure_rate":  0.0,
+                                      "tasks":  480,
+                                      "injected_failures":  0,
+                                      "misleading_high_confidence":  0,
+                                      "policies":  {
+                                                       "graph_only":  {
+                                                                          "correct":  480,
+                                                                          "localization_accuracy":  1.0,
+                                                                          "wilson_95pct":  [
+                                                                                               0.9921,
+                                                                                               1.0
+                                                                                           ],
+                                                                          "mean_retrieval_calls":  1.0
+                                                                      },
+                                                       "unconditional_fallback":  {
+                                                                                      "correct":  480,
+                                                                                      "localization_accuracy":  1.0,
+                                                                                      "wilson_95pct":  [
+                                                                                                           0.9921,
+                                                                                                           1.0
+                                                                                                       ],
+                                                                                      "mean_retrieval_calls":  2.0
+                                                                                  },
+                                                       "confidence_gated":  {
+                                                                                "correct":  480,
+                                                                                "localization_accuracy":  1.0,
+                                                                                "wilson_95pct":  [
+                                                                                                     0.9921,
+                                                                                                     1.0
+                                                                                                 ],
+                                                                                "mean_retrieval_calls":  1.0
+                                                                            }
+                                                   }
+                                  },
+                                  {
+                                      "injected_graph_failure_rate":  0.1,
+                                      "tasks":  480,
+                                      "injected_failures":  50,
+                                      "misleading_high_confidence":  17,
+                                      "policies":  {
+                                                       "graph_only":  {
+                                                                          "correct":  430,
+                                                                          "localization_accuracy":  0.8958,
+                                                                          "wilson_95pct":  [
+                                                                                               0.8653,
+                                                                                               0.9201
+                                                                                           ],
+                                                                          "mean_retrieval_calls":  1.0
+                                                                      },
+                                                       "unconditional_fallback":  {
+                                                                                      "correct":  480,
+                                                                                      "localization_accuracy":  1.0,
+                                                                                      "wilson_95pct":  [
+                                                                                                           0.9921,
+                                                                                                           1.0
+                                                                                                       ],
+                                                                                      "mean_retrieval_calls":  2.0
+                                                                                  },
+                                                       "confidence_gated":  {
+                                                                                "correct":  463,
+                                                                                "localization_accuracy":  0.9646,
+                                                                                "wilson_95pct":  [
+                                                                                                     0.944,
+                                                                                                     0.9778
+                                                                                                 ],
+                                                                                "mean_retrieval_calls":  1.0688
+                                                                            }
+                                                   }
+                                  },
+                                  {
+                                      "injected_graph_failure_rate":  0.25,
+                                      "tasks":  480,
+                                      "injected_failures":  106,
+                                      "misleading_high_confidence":  25,
+                                      "policies":  {
+                                                       "graph_only":  {
+                                                                          "correct":  374,
+                                                                          "localization_accuracy":  0.7792,
+                                                                          "wilson_95pct":  [
+                                                                                               0.7399,
+                                                                                               0.814
+                                                                                           ],
+                                                                          "mean_retrieval_calls":  1.0
+                                                                      },
+                                                       "unconditional_fallback":  {
+                                                                                      "correct":  480,
+                                                                                      "localization_accuracy":  1.0,
+                                                                                      "wilson_95pct":  [
+                                                                                                           0.9921,
+                                                                                                           1.0
+                                                                                                       ],
+                                                                                      "mean_retrieval_calls":  2.0
+                                                                                  },
+                                                       "confidence_gated":  {
+                                                                                "correct":  455,
+                                                                                "localization_accuracy":  0.9479,
+                                                                                "wilson_95pct":  [
+                                                                                                     0.9242,
+                                                                                                     0.9645
+                                                                                                 ],
+                                                                                "mean_retrieval_calls":  1.1687
+                                                                            }
+                                                   }
+                                  },
+                                  {
+                                      "injected_graph_failure_rate":  0.5,
+                                      "tasks":  480,
+                                      "injected_failures":  241,
+                                      "misleading_high_confidence":  70,
+                                      "policies":  {
+                                                       "graph_only":  {
+                                                                          "correct":  239,
+                                                                          "localization_accuracy":  0.4979,
+                                                                          "wilson_95pct":  [
+                                                                                               0.4534,
+                                                                                               0.5425
+                                                                                           ],
+                                                                          "mean_retrieval_calls":  1.0
+                                                                      },
+                                                       "unconditional_fallback":  {
+                                                                                      "correct":  480,
+                                                                                      "localization_accuracy":  1.0,
+                                                                                      "wilson_95pct":  [
+                                                                                                           0.9921,
+                                                                                                           1.0
+                                                                                                       ],
+                                                                                      "mean_retrieval_calls":  2.0
+                                                                                  },
+                                                       "confidence_gated":  {
+                                                                                "correct":  410,
+                                                                                "localization_accuracy":  0.8542,
+                                                                                "wilson_95pct":  [
+                                                                                                     0.8198,
+                                                                                                     0.8829
+                                                                                                 ],
+                                                                                "mean_retrieval_calls":  1.3562
+                                                                            }
+                                                   }
+                                  },
+                                  {
+                                      "injected_graph_failure_rate":  0.75,
+                                      "tasks":  480,
+                                      "injected_failures":  362,
+                                      "misleading_high_confidence":  94,
+                                      "policies":  {
+                                                       "graph_only":  {
+                                                                          "correct":  118,
+                                                                          "localization_accuracy":  0.2458,
+                                                                          "wilson_95pct":  [
+                                                                                               0.2094,
+                                                                                               0.2863
+                                                                                           ],
+                                                                          "mean_retrieval_calls":  1.0
+                                                                      },
+                                                       "unconditional_fallback":  {
+                                                                                      "correct":  480,
+                                                                                      "localization_accuracy":  1.0,
+                                                                                      "wilson_95pct":  [
+                                                                                                           0.9921,
+                                                                                                           1.0
+                                                                                                       ],
+                                                                                      "mean_retrieval_calls":  2.0
+                                                                                  },
+                                                       "confidence_gated":  {
+                                                                                "correct":  386,
+                                                                                "localization_accuracy":  0.8042,
+                                                                                "wilson_95pct":  [
+                                                                                                     0.7663,
+                                                                                                     0.8372
+                                                                                                 ],
+                                                                                "mean_retrieval_calls":  1.5583
+                                                                            }
+                                                   }
+                                  }
+                              ],
+    "limitations":  [
+                        "Retrieval failures and confidence are simulated, not a trained graph model.",
+                        "Exact identifier string is supplied in each issue in this proxy test.",
+                        "Unique symbol filter makes lexical recovery easier than realistic issues.",
+                        "Repeated scenarios share tasks and are not statistically independent.",
+                        "No model runs, human patch review, hidden tests, or official score."
+                    ]
+}
+
