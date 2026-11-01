@@ -1,0 +1,455 @@
+{
+    "study":  "Confidence-gated code localization under injected graph failures",
+    "experiment_type":  "SIMULATED retrieval faults over real AST symbols",
+    "not":  [
+                "Gemma model inference",
+                "real Kaggle graph retrieval",
+                "patch acceptance",
+                "SWE-bench score"
+            ],
+    "repository":  "https://github.com/igorsiecz/kaggle_postgre_challenge",
+    "source_commit":  "22c704c3e745c1f73eaa616bc91af2b91aed8e11",
+    "seed":  20261111,
+    "symbols_per_replicate":  48,
+    "repeats_per_rate":  10,
+    "total_decisions":  2400,
+    "methods":  {
+                    "graph_only":  "single graph result, no fallback",
+                    "unconditional_fallback":  "graph then exact unique symbol lookup",
+                    "confidence_gated":  "graph then exact symbol lookup if confidence \u003c 0.70",
+                    "faults":  "wrong symbol returned with 25% misleading high confidence"
+                },
+    "corpus_audit":  {
+                         "files_parsed_or_attempted":  21,
+                         "unparsable_files":  0,
+                         "function_definitions":  520,
+                         "unique_symbols":  432
+                     },
+    "selected_ground_truth":  [
+                                  {
+                                      "symbol":  "random",
+                                      "file":  "generate_database.py",
+                                      "line":  221
+                                  },
+                                  {
+                                      "symbol":  "resolve_canonical",
+                                      "file":  "generate_database.py",
+                                      "line":  918
+                                  },
+                                  {
+                                      "symbol":  "ask_open_filenames",
+                                      "file":  "main.py",
+                                      "line":  512
+                                  },
+                                  {
+                                      "symbol":  "ask_save_filename",
+                                      "file":  "main.py",
+                                      "line":  515
+                                  },
+                                  {
+                                      "symbol":  "set_sql_execution_busy",
+                                      "file":  "main.py",
+                                      "line":  533
+                                  },
+                                  {
+                                      "symbol":  "update_raw_progress",
+                                      "file":  "main.py",
+                                      "line":  566
+                                  },
+                                  {
+                                      "symbol":  "update_sql_execution_progress",
+                                      "file":  "main.py",
+                                      "line":  645
+                                  },
+                                  {
+                                      "symbol":  "mark_sql_execution_progress_cancelled",
+                                      "file":  "main.py",
+                                      "line":  658
+                                  },
+                                  {
+                                      "symbol":  "begin_cross_table_expansion_cancellation_scope",
+                                      "file":  "main.py",
+                                      "line":  772
+                                  },
+                                  {
+                                      "symbol":  "mark_raw_expand_progress_cancelled",
+                                      "file":  "main.py",
+                                      "line":  836
+                                  },
+                                  {
+                                      "symbol":  "request_cancel_raw_group",
+                                      "file":  "main.py",
+                                      "line":  1091
+                                  },
+                                  {
+                                      "symbol":  "begin_constraint_change_cancellation_scope",
+                                      "file":  "main.py",
+                                      "line":  1147
+                                  },
+                                  {
+                                      "symbol":  "request_cancel_constraint_change",
+                                      "file":  "main.py",
+                                      "line":  1150
+                                  },
+                                  {
+                                      "symbol":  "open_restore_version_progress",
+                                      "file":  "main.py",
+                                      "line":  1267
+                                  },
+                                  {
+                                      "symbol":  "begin_restore_version_cancellation_scope",
+                                      "file":  "main.py",
+                                      "line":  1314
+                                  },
+                                  {
+                                      "symbol":  "populate_version_buttons",
+                                      "file":  "main.py",
+                                      "line":  1742
+                                  },
+                                  {
+                                      "symbol":  "select_version",
+                                      "file":  "main.py",
+                                      "line":  1962
+                                  },
+                                  {
+                                      "symbol":  "show_sql_query_results",
+                                      "file":  "main.py",
+                                      "line":  2062
+                                  },
+                                  {
+                                      "symbol":  "open_table_column_dictionary_link_flow",
+                                      "file":  "main.py",
+                                      "line":  2210
+                                  },
+                                  {
+                                      "symbol":  "edit_data_dictionary_entry_flow",
+                                      "file":  "main.py",
+                                      "line":  2441
+                                  },
+                                  {
+                                      "symbol":  "open_data_dictionary_usage_editor_flow",
+                                      "file":  "main.py",
+                                      "line":  2545
+                                  },
+                                  {
+                                      "symbol":  "open_users_permissions_flow",
+                                      "file":  "main.py",
+                                      "line":  3046
+                                  },
+                                  {
+                                      "symbol":  "handle_root_password",
+                                      "file":  "main.py",
+                                      "line":  3351
+                                  },
+                                  {
+                                      "symbol":  "load_table_details",
+                                      "file":  "main.py",
+                                      "line":  3565
+                                  },
+                                  {
+                                      "symbol":  "apply_foreign_key",
+                                      "file":  "main.py",
+                                      "line":  4158
+                                  },
+                                  {
+                                      "symbol":  "apply_column_create",
+                                      "file":  "main.py",
+                                      "line":  5277
+                                  },
+                                  {
+                                      "symbol":  "apply_removed_table",
+                                      "file":  "main.py",
+                                      "line":  5733
+                                  },
+                                  {
+                                      "symbol":  "beforeBuild",
+                                      "file":  "services/pdf_export.py",
+                                      "line":  190
+                                  },
+                                  {
+                                      "symbol":  "isIndexing",
+                                      "file":  "services/pdf_export.py",
+                                      "line":  194
+                                  },
+                                  {
+                                      "symbol":  "notify",
+                                      "file":  "services/pdf_export.py",
+                                      "line":  200
+                                  },
+                                  {
+                                      "symbol":  "build_data_dictionary_pdf",
+                                      "file":  "services/pdf_export.py",
+                                      "line":  336
+                                  },
+                                  {
+                                      "symbol":  "expansion_timing_scope",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  347
+                                  },
+                                  {
+                                      "symbol":  "expand_raw_value_key_from_child_table",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  5437
+                                  },
+                                  {
+                                      "symbol":  "delete_data_dictionary_entry",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  7246
+                                  },
+                                  {
+                                      "symbol":  "table_exists",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  9499
+                                  },
+                                  {
+                                      "symbol":  "clear_dump_artifact_references",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  10503
+                                  },
+                                  {
+                                      "symbol":  "list_tables",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  10573
+                                  },
+                                  {
+                                      "symbol":  "list_database_users",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  10610
+                                  },
+                                  {
+                                      "symbol":  "is_permission_denied_error",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  11007
+                                  },
+                                  {
+                                      "symbol":  "list_table_versions",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  14234
+                                  },
+                                  {
+                                      "symbol":  "get_table_version_detail",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  14307
+                                  },
+                                  {
+                                      "symbol":  "flatten_history",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  14508
+                                  },
+                                  {
+                                      "symbol":  "get_latest_table_version_code",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  14609
+                                  },
+                                  {
+                                      "symbol":  "delete_table",
+                                      "file":  "services/postgres_service.py",
+                                      "line":  15611
+                                  },
+                                  {
+                                      "symbol":  "center_window",
+                                      "file":  "ui/dialogs.py",
+                                      "line":  53
+                                  },
+                                  {
+                                      "symbol":  "show_centered_dialog",
+                                      "file":  "ui/dialogs.py",
+                                      "line":  80
+                                  },
+                                  {
+                                      "symbol":  "mark_cancelling",
+                                      "file":  "ui/dialogs.py",
+                                      "line":  8667
+                                  },
+                                  {
+                                      "symbol":  "split_table_name",
+                                      "file":  "utils.py",
+                                      "line":  33
+                                  }
+                              ],
+    "results_by_fault_rate":  [
+                                  {
+                                      "injected_graph_failure_rate":  0.0,
+                                      "tasks":  480,
+                                      "injected_failures":  0,
+                                      "misleading_high_confidence":  0,
+                                      "policies":  {
+                                                       "graph_only":  {
+                                                                          "correct":  480,
+                                                                          "localization_accuracy":  1.0,
+                                                                          "wilson_95pct":  [
+                                                                                               0.9921,
+                                                                                               1.0
+                                                                                           ],
+                                                                          "mean_retrieval_calls":  1.0
+                                                                      },
+                                                       "unconditional_fallback":  {
+                                                                                      "correct":  480,
+                                                                                      "localization_accuracy":  1.0,
+                                                                                      "wilson_95pct":  [
+                                                                                                           0.9921,
+                                                                                                           1.0
+                                                                                                       ],
+                                                                                      "mean_retrieval_calls":  2.0
+                                                                                  },
+                                                       "confidence_gated":  {
+                                                                                "correct":  480,
+                                                                                "localization_accuracy":  1.0,
+                                                                                "wilson_95pct":  [
+                                                                                                     0.9921,
+                                                                                                     1.0
+                                                                                                 ],
+                                                                                "mean_retrieval_calls":  1.0
+                                                                            }
+                                                   }
+                                  },
+                                  {
+                                      "injected_graph_failure_rate":  0.1,
+                                      "tasks":  480,
+                                      "injected_failures":  50,
+                                      "misleading_high_confidence":  13,
+                                      "policies":  {
+                                                       "graph_only":  {
+                                                                          "correct":  430,
+                                                                          "localization_accuracy":  0.8958,
+                                                                          "wilson_95pct":  [
+                                                                                               0.8653,
+                                                                                               0.9201
+                                                                                           ],
+                                                                          "mean_retrieval_calls":  1.0
+                                                                      },
+                                                       "unconditional_fallback":  {
+                                                                                      "correct":  480,
+                                                                                      "localization_accuracy":  1.0,
+                                                                                      "wilson_95pct":  [
+                                                                                                           0.9921,
+                                                                                                           1.0
+                                                                                                       ],
+                                                                                      "mean_retrieval_calls":  2.0
+                                                                                  },
+                                                       "confidence_gated":  {
+                                                                                "correct":  467,
+                                                                                "localization_accuracy":  0.9729,
+                                                                                "wilson_95pct":  [
+                                                                                                     0.9542,
+                                                                                                     0.9841
+                                                                                                 ],
+                                                                                "mean_retrieval_calls":  1.0771
+                                                                            }
+                                                   }
+                                  },
+                                  {
+                                      "injected_graph_failure_rate":  0.25,
+                                      "tasks":  480,
+                                      "injected_failures":  118,
+                                      "misleading_high_confidence":  38,
+                                      "policies":  {
+                                                       "graph_only":  {
+                                                                          "correct":  362,
+                                                                          "localization_accuracy":  0.7542,
+                                                                          "wilson_95pct":  [
+                                                                                               0.7137,
+                                                                                               0.7906
+                                                                                           ],
+                                                                          "mean_retrieval_calls":  1.0
+                                                                      },
+                                                       "unconditional_fallback":  {
+                                                                                      "correct":  480,
+                                                                                      "localization_accuracy":  1.0,
+                                                                                      "wilson_95pct":  [
+                                                                                                           0.9921,
+                                                                                                           1.0
+                                                                                                       ],
+                                                                                      "mean_retrieval_calls":  2.0
+                                                                                  },
+                                                       "confidence_gated":  {
+                                                                                "correct":  442,
+                                                                                "localization_accuracy":  0.9208,
+                                                                                "wilson_95pct":  [
+                                                                                                     0.8932,
+                                                                                                     0.9418
+                                                                                                 ],
+                                                                                "mean_retrieval_calls":  1.1667
+                                                                            }
+                                                   }
+                                  },
+                                  {
+                                      "injected_graph_failure_rate":  0.5,
+                                      "tasks":  480,
+                                      "injected_failures":  244,
+                                      "misleading_high_confidence":  57,
+                                      "policies":  {
+                                                       "graph_only":  {
+                                                                          "correct":  236,
+                                                                          "localization_accuracy":  0.4917,
+                                                                          "wilson_95pct":  [
+                                                                                               0.4472,
+                                                                                               0.5363
+                                                                                           ],
+                                                                          "mean_retrieval_calls":  1.0
+                                                                      },
+                                                       "unconditional_fallback":  {
+                                                                                      "correct":  480,
+                                                                                      "localization_accuracy":  1.0,
+                                                                                      "wilson_95pct":  [
+                                                                                                           0.9921,
+                                                                                                           1.0
+                                                                                                       ],
+                                                                                      "mean_retrieval_calls":  2.0
+                                                                                  },
+                                                       "confidence_gated":  {
+                                                                                "correct":  423,
+                                                                                "localization_accuracy":  0.8812,
+                                                                                "wilson_95pct":  [
+                                                                                                     0.8492,
+                                                                                                     0.9072
+                                                                                                 ],
+                                                                                "mean_retrieval_calls":  1.3896
+                                                                            }
+                                                   }
+                                  },
+                                  {
+                                      "injected_graph_failure_rate":  0.75,
+                                      "tasks":  480,
+                                      "injected_failures":  368,
+                                      "misleading_high_confidence":  102,
+                                      "policies":  {
+                                                       "graph_only":  {
+                                                                          "correct":  112,
+                                                                          "localization_accuracy":  0.2333,
+                                                                          "wilson_95pct":  [
+                                                                                               0.1977,
+                                                                                               0.2732
+                                                                                           ],
+                                                                          "mean_retrieval_calls":  1.0
+                                                                      },
+                                                       "unconditional_fallback":  {
+                                                                                      "correct":  480,
+                                                                                      "localization_accuracy":  1.0,
+                                                                                      "wilson_95pct":  [
+                                                                                                           0.9921,
+                                                                                                           1.0
+                                                                                                       ],
+                                                                                      "mean_retrieval_calls":  2.0
+                                                                                  },
+                                                       "confidence_gated":  {
+                                                                                "correct":  378,
+                                                                                "localization_accuracy":  0.7875,
+                                                                                "wilson_95pct":  [
+                                                                                                     0.7487,
+                                                                                                     0.8217
+                                                                                                 ],
+                                                                                "mean_retrieval_calls":  1.5542
+                                                                            }
+                                                   }
+                                  }
+                              ],
+    "limitations":  [
+                        "Retrieval failures and confidence are simulated, not a trained graph model.",
+                        "Exact identifier string is supplied in each issue in this proxy test.",
+                        "Unique symbol filter makes lexical recovery easier than realistic issues.",
+                        "Repeated scenarios share tasks and are not statistically independent.",
+                        "No model runs, human patch review, hidden tests, or official score."
+                    ]
+}
+
