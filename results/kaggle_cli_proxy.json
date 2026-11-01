@@ -1,0 +1,454 @@
+{
+  "study": "Confidence-gated code localization under injected graph failures",
+  "experiment_type": "SIMULATED retrieval faults over real AST symbols",
+  "not": [
+    "Gemma model inference",
+    "real Kaggle graph retrieval",
+    "patch acceptance",
+    "SWE-bench score"
+  ],
+  "repository": "https://github.com/Kaggle/kaggle-cli",
+  "source_commit": "577e21c17ca2016e4d803561ce9a4ed69ec119bd",
+  "seed": 20261101,
+  "symbols_per_replicate": 48,
+  "repeats_per_rate": 10,
+  "total_decisions": 2400,
+  "methods": {
+    "graph_only": "single graph result, no fallback",
+    "unconditional_fallback": "graph then exact unique symbol lookup",
+    "confidence_gated": "graph then exact symbol lookup if confidence < 0.70",
+    "faults": "wrong symbol returned with 25% misleading high confidence"
+  },
+  "corpus_audit": {
+    "files_parsed_or_attempted": 815,
+    "unparsable_files": 0,
+    "function_definitions": 9390,
+    "unique_symbols": 3350
+  },
+  "selected_ground_truth": [
+    {
+      "symbol": "get_run_validators",
+      "file": "attr/_config.py",
+      "line": 23
+    },
+    {
+      "symbol": "from_counting_attr",
+      "file": "attr/_make.py",
+      "line": 2562
+    },
+    {
+      "symbol": "rcdataEndTagOpenState",
+      "file": "bleach/_vendor/html5lib/_tokenizer.py",
+      "line": 467
+    },
+    {
+      "symbol": "scriptDataEscapedDashDashState",
+      "file": "bleach/_vendor/html5lib/_tokenizer.py",
+      "line": 669
+    },
+    {
+      "symbol": "startTagPreListing",
+      "file": "bleach/_vendor/html5lib/html5parser.py",
+      "line": 1046
+    },
+    {
+      "symbol": "flushCharacters",
+      "file": "bleach/_vendor/html5lib/html5parser.py",
+      "line": 1851
+    },
+    {
+      "symbol": "adjust_attributes",
+      "file": "bleach/_vendor/html5lib/html5parser.py",
+      "line": 2778
+    },
+    {
+      "symbol": "characters_popularity_compare",
+      "file": "charset_normalizer/cd.py",
+      "line": 193
+    },
+    {
+      "symbol": "cp_similarity",
+      "file": "charset_normalizer/utils.py",
+      "line": 314
+    },
+    {
+      "symbol": "testStyleAttributes",
+      "file": "colorama/tests/ansi_test.py",
+      "line": 69
+    },
+    {
+      "symbol": "testInitDoesntWrapOnNonWindows",
+      "file": "colorama/tests/initialise_test.py",
+      "line": 57
+    },
+    {
+      "symbol": "get_attrs",
+      "file": "colorama/winterm.py",
+      "line": 42
+    },
+    {
+      "symbol": "tzname_in_python2",
+      "file": "dateutil/tz/_common.py",
+      "line": 13
+    },
+    {
+      "symbol": "gettz",
+      "file": "dateutil/zoneinfo/__init__.py",
+      "line": 178
+    },
+    {
+      "symbol": "generate_exclusive_minimum",
+      "file": "fastjsonschema/draft06.py",
+      "line": 86
+    },
+    {
+      "symbol": "run_cust",
+      "file": "google/protobuf/internal/json_format_benchmark.py",
+      "line": 120
+    },
+    {
+      "symbol": "bench_build_nested_message_nested_message",
+      "file": "google/protobuf/internal/message_benchmark.py",
+      "line": 96
+    },
+    {
+      "symbol": "ConsumeByteString",
+      "file": "google/protobuf/text_format.py",
+      "line": 1728
+    },
+    {
+      "symbol": "additionalItems",
+      "file": "jsonschema/_legacy_keywords.py",
+      "line": 106
+    },
+    {
+      "symbol": "absolute_path",
+      "file": "jsonschema/exceptions.py",
+      "line": 133
+    },
+    {
+      "symbol": "format_cases",
+      "file": "jsonschema/tests/_suite.py",
+      "line": 96
+    },
+    {
+      "symbol": "test_strong_keywords_are_higher_priority",
+      "file": "jsonschema/tests/test_exceptions.py",
+      "line": 373
+    },
+    {
+      "symbol": "test_iter_errors_successful",
+      "file": "jsonschema/tests/test_validators.py",
+      "line": 74
+    },
+    {
+      "symbol": "test_minItems_1",
+      "file": "jsonschema/tests/test_validators.py",
+      "line": 512
+    },
+    {
+      "symbol": "test_False_is_not_a_schema",
+      "file": "jsonschema/tests/test_validators.py",
+      "line": 1918
+    },
+    {
+      "symbol": "test_custom_validator",
+      "file": "jsonschema/tests/test_validators.py",
+      "line": 2102
+    },
+    {
+      "symbol": "test_validator_for_jsonschema_default",
+      "file": "jsonschema/tests/test_validators.py",
+      "line": 2125
+    },
+    {
+      "symbol": "matcher",
+      "file": "jsonschema/validators.py",
+      "line": 1241
+    },
+    {
+      "symbol": "metadata_to_rmd_options",
+      "file": "jupytext/cell_metadata.py",
+      "line": 81
+    },
+    {
+      "symbol": "notebook_to_marimo_py",
+      "file": "jupytext/marimo.py",
+      "line": 119
+    },
+    {
+      "symbol": "get_prefix",
+      "file": "jupytext/paired_paths.py",
+      "line": 104
+    },
+    {
+      "symbol": "build_kaggle_client_with_params",
+      "file": "kaggle/api/kaggle_api_extended.py",
+      "line": 1965
+    },
+    {
+      "symbol": "competition_list_files_cli",
+      "file": "kaggle/api/kaggle_api_extended.py",
+      "line": 2673
+    },
+    {
+      "symbol": "model_instance_version_files_cli",
+      "file": "kaggle/api/kaggle_api_extended.py",
+      "line": 8923
+    },
+    {
+      "symbol": "benchmarks_tasks_log_cli",
+      "file": "kaggle/api/kaggle_api_extended.py",
+      "line": 11179
+    },
+    {
+      "symbol": "list_submission_episodes",
+      "file": "kagglesdk/competitions/services/competition_api_service.py",
+      "line": 241
+    },
+    {
+      "symbol": "create_competition_sample_submission",
+      "file": "kagglesdk/competitions/services/competition_api_service.py",
+      "line": 405
+    },
+    {
+      "symbol": "hackathonWriteUps",
+      "file": "kagglesdk/competitions/types/hackathon_api_service.py",
+      "line": 516
+    },
+    {
+      "symbol": "handle_scanning_quoted_value",
+      "file": "mdit_py_plugins/attrs/parse.py",
+      "line": 226
+    },
+    {
+      "symbol": "cached_retrieve",
+      "file": "referencing/retrieval.py",
+      "line": 87
+    },
+    {
+      "symbol": "test_crawled_anchor",
+      "file": "referencing/tests/test_core.py",
+      "line": 197
+    },
+    {
+      "symbol": "test_multiple_lookup_recursive_ref_with_nonrecursive_ref",
+      "file": "referencing/tests/test_jsonschema.py",
+      "line": 336
+    },
+    {
+      "symbol": "ensure_text",
+      "file": "six.py",
+      "line": 944
+    },
+    {
+      "symbol": "tsrange",
+      "file": "tqdm/contrib/slack.py",
+      "line": 112
+    },
+    {
+      "symbol": "promise_resolver",
+      "file": "urllib3/contrib/emscripten/fetch.py",
+      "line": 214
+    },
+    {
+      "symbol": "construct_sequence",
+      "file": "yaml/constructor.py",
+      "line": 124
+    },
+    {
+      "symbol": "construct_yaml_omap",
+      "file": "yaml/constructor.py",
+      "line": 353
+    },
+    {
+      "symbol": "write_line_break",
+      "file": "yaml/emitter.py",
+      "line": 827
+    }
+  ],
+  "results_by_fault_rate": [
+    {
+      "injected_graph_failure_rate": 0,
+      "tasks": 480,
+      "injected_failures": 0,
+      "misleading_high_confidence": 0,
+      "policies": {
+        "graph_only": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 1
+        },
+        "unconditional_fallback": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 2
+        },
+        "confidence_gated": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 1
+        }
+      }
+    },
+    {
+      "injected_graph_failure_rate": 0.1,
+      "tasks": 480,
+      "injected_failures": 48,
+      "misleading_high_confidence": 12,
+      "policies": {
+        "graph_only": {
+          "correct": 432,
+          "localization_accuracy": 0.9,
+          "wilson_95pct": [
+            0.8699,
+            0.9237
+          ],
+          "mean_retrieval_calls": 1
+        },
+        "unconditional_fallback": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 2
+        },
+        "confidence_gated": {
+          "correct": 468,
+          "localization_accuracy": 0.975,
+          "wilson_95pct": [
+            0.9568,
+            0.9856
+          ],
+          "mean_retrieval_calls": 1.075
+        }
+      }
+    },
+    {
+      "injected_graph_failure_rate": 0.25,
+      "tasks": 480,
+      "injected_failures": 116,
+      "misleading_high_confidence": 34,
+      "policies": {
+        "graph_only": {
+          "correct": 364,
+          "localization_accuracy": 0.7583,
+          "wilson_95pct": [
+            0.7181,
+            0.7945
+          ],
+          "mean_retrieval_calls": 1
+        },
+        "unconditional_fallback": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 2
+        },
+        "confidence_gated": {
+          "correct": 446,
+          "localization_accuracy": 0.9292,
+          "wilson_95pct": [
+            0.9026,
+            0.9489
+          ],
+          "mean_retrieval_calls": 1.1708
+        }
+      }
+    },
+    {
+      "injected_graph_failure_rate": 0.5,
+      "tasks": 480,
+      "injected_failures": 245,
+      "misleading_high_confidence": 53,
+      "policies": {
+        "graph_only": {
+          "correct": 235,
+          "localization_accuracy": 0.4896,
+          "wilson_95pct": [
+            0.4451,
+            0.5342
+          ],
+          "mean_retrieval_calls": 1
+        },
+        "unconditional_fallback": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 2
+        },
+        "confidence_gated": {
+          "correct": 427,
+          "localization_accuracy": 0.8896,
+          "wilson_95pct": [
+            0.8584,
+            0.9146
+          ],
+          "mean_retrieval_calls": 1.4
+        }
+      }
+    },
+    {
+      "injected_graph_failure_rate": 0.75,
+      "tasks": 480,
+      "injected_failures": 370,
+      "misleading_high_confidence": 93,
+      "policies": {
+        "graph_only": {
+          "correct": 110,
+          "localization_accuracy": 0.2292,
+          "wilson_95pct": [
+            0.1938,
+            0.2688
+          ],
+          "mean_retrieval_calls": 1
+        },
+        "unconditional_fallback": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 2
+        },
+        "confidence_gated": {
+          "correct": 387,
+          "localization_accuracy": 0.8063,
+          "wilson_95pct": [
+            0.7685,
+            0.8391
+          ],
+          "mean_retrieval_calls": 1.5771
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Retrieval failures and confidence are simulated, not a trained graph model.",
+    "Exact identifier string is supplied in each issue in this proxy test.",
+    "Unique symbol filter makes lexical recovery easier than realistic issues.",
+    "Repeated scenarios share tasks and are not statistically independent.",
+    "No model runs, human patch review, hidden tests, or official score."
+  ]
+}
