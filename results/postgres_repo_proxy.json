@@ -1,0 +1,454 @@
+{
+  "study": "Confidence-gated code localization under injected graph failures",
+  "experiment_type": "SIMULATED retrieval faults over real AST symbols",
+  "not": [
+    "Gemma model inference",
+    "real Kaggle graph retrieval",
+    "patch acceptance",
+    "SWE-bench score"
+  ],
+  "repository": "https://github.com/igorsiecz/kaggle_postgre_challenge",
+  "source_commit": "22c704c3e745c1f73eaa616bc91af2b91aed8e11",
+  "seed": 20261101,
+  "symbols_per_replicate": 48,
+  "repeats_per_rate": 10,
+  "total_decisions": 2400,
+  "methods": {
+    "graph_only": "single graph result, no fallback",
+    "unconditional_fallback": "graph then exact unique symbol lookup",
+    "confidence_gated": "graph then exact symbol lookup if confidence < 0.70",
+    "faults": "wrong symbol returned with 25% misleading high confidence"
+  },
+  "corpus_audit": {
+    "files_parsed_or_attempted": 21,
+    "unparsable_files": 0,
+    "function_definitions": 520,
+    "unique_symbols": 432
+  },
+  "selected_ground_truth": [
+    {
+      "symbol": "ensure_cache",
+      "file": "filter/facet_service.py",
+      "line": 13
+    },
+    {
+      "symbol": "find_first_sqlite",
+      "file": "filter/read_sqlite.py",
+      "line": 5
+    },
+    {
+      "symbol": "checkpoint",
+      "file": "filter/sqlite_cache.py",
+      "line": 177
+    },
+    {
+      "symbol": "begin_table_rebuild",
+      "file": "filter/sqlite_cache.py",
+      "line": 181
+    },
+    {
+      "symbol": "integer",
+      "file": "generate_database.py",
+      "line": 224
+    },
+    {
+      "symbol": "row_at",
+      "file": "generate_database.py",
+      "line": 458
+    },
+    {
+      "symbol": "align_button_text_left",
+      "file": "main.py",
+      "line": 426
+    },
+    {
+      "symbol": "mark_raw_progress_finalizing",
+      "file": "main.py",
+      "line": 575
+    },
+    {
+      "symbol": "request_cancel_raw_import",
+      "file": "main.py",
+      "line": 608
+    },
+    {
+      "symbol": "open_sql_query_progress",
+      "file": "main.py",
+      "line": 635
+    },
+    {
+      "symbol": "mark_sql_execution_progress_cancelled",
+      "file": "main.py",
+      "line": 658
+    },
+    {
+      "symbol": "open_cross_table_expansion_progress",
+      "file": "main.py",
+      "line": 688
+    },
+    {
+      "symbol": "mark_cross_table_expansion_cancelling",
+      "file": "main.py",
+      "line": 751
+    },
+    {
+      "symbol": "begin_cross_table_expansion_cancellation_scope",
+      "file": "main.py",
+      "line": 772
+    },
+    {
+      "symbol": "mark_raw_expand_progress_cancelled",
+      "file": "main.py",
+      "line": 836
+    },
+    {
+      "symbol": "clear_raw_group_cancellation_scope",
+      "file": "main.py",
+      "line": 1099
+    },
+    {
+      "symbol": "update_constraint_progress",
+      "file": "main.py",
+      "line": 1120
+    },
+    {
+      "symbol": "open_table_delete_progress",
+      "file": "main.py",
+      "line": 1214
+    },
+    {
+      "symbol": "open_restore_version_to_new_table_progress",
+      "file": "main.py",
+      "line": 1277
+    },
+    {
+      "symbol": "mark_restore_version_progress_cancelled",
+      "file": "main.py",
+      "line": 1300
+    },
+    {
+      "symbol": "close_restore_version_progress",
+      "file": "main.py",
+      "line": 1305
+    },
+    {
+      "symbol": "ask_admin_action",
+      "file": "main.py",
+      "line": 1989
+    },
+    {
+      "symbol": "ask_create_table_info",
+      "file": "main.py",
+      "line": 2162
+    },
+    {
+      "symbol": "export_data_dictionary_pdf_flow",
+      "file": "main.py",
+      "line": 2312
+    },
+    {
+      "symbol": "ask_excel_sheet_selection",
+      "file": "main.py",
+      "line": 2759
+    },
+    {
+      "symbol": "show_json_structure_dialog",
+      "file": "main.py",
+      "line": 2769
+    },
+    {
+      "symbol": "cancel_database_operation_query_flow",
+      "file": "main.py",
+      "line": 2946
+    },
+    {
+      "symbol": "open_role_permissions_flow",
+      "file": "main.py",
+      "line": 3248
+    },
+    {
+      "symbol": "apply_validation",
+      "file": "main.py",
+      "line": 4271
+    },
+    {
+      "symbol": "create_columns_flow",
+      "file": "main.py",
+      "line": 5201
+    },
+    {
+      "symbol": "reload_table_preview_with_filters",
+      "file": "main.py",
+      "line": 5837
+    },
+    {
+      "symbol": "refresh_dump_artifacts_dialog",
+      "file": "main.py",
+      "line": 6781
+    },
+    {
+      "symbol": "remote_storage_root",
+      "file": "services/postgres_service.py",
+      "line": 409
+    },
+    {
+      "symbol": "cancel_active_commands",
+      "file": "services/postgres_service.py",
+      "line": 469
+    },
+    {
+      "symbol": "iter_remote_command_lines",
+      "file": "services/postgres_service.py",
+      "line": 723
+    },
+    {
+      "symbol": "build_raw_load_recipe",
+      "file": "services/postgres_service.py",
+      "line": 6015
+    },
+    {
+      "symbol": "restore_dump_artifact_to_table",
+      "file": "services/postgres_service.py",
+      "line": 10423
+    },
+    {
+      "symbol": "check_can_create_database",
+      "file": "services/postgres_service.py",
+      "line": 10547
+    },
+    {
+      "symbol": "is_permission_denied_error",
+      "file": "services/postgres_service.py",
+      "line": 11007
+    },
+    {
+      "symbol": "get_latest_version_history_log",
+      "file": "services/postgres_service.py",
+      "line": 14600
+    },
+    {
+      "symbol": "get_table_audit_count",
+      "file": "services/postgres_service.py",
+      "line": 14693
+    },
+    {
+      "symbol": "test_all_recipes_are_accepted_in_dependency_order",
+      "file": "tests/test_challenge_expansion_recipes.py",
+      "line": 20
+    },
+    {
+      "symbol": "normalize_aliases_text",
+      "file": "ui/dialogs.py",
+      "line": 3199
+    },
+    {
+      "symbol": "set_column_name",
+      "file": "ui/dialogs.py",
+      "line": 3217
+    },
+    {
+      "symbol": "set_snapshot",
+      "file": "ui/dialogs.py",
+      "line": 5808
+    },
+    {
+      "symbol": "int_to_version",
+      "file": "utils.py",
+      "line": 29
+    },
+    {
+      "symbol": "format_version_history_entry",
+      "file": "utils.py",
+      "line": 39
+    },
+    {
+      "symbol": "save_connection_credentials",
+      "file": "utils.py",
+      "line": 241
+    }
+  ],
+  "results_by_fault_rate": [
+    {
+      "injected_graph_failure_rate": 0,
+      "tasks": 480,
+      "injected_failures": 0,
+      "misleading_high_confidence": 0,
+      "policies": {
+        "graph_only": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 1
+        },
+        "unconditional_fallback": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 2
+        },
+        "confidence_gated": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 1
+        }
+      }
+    },
+    {
+      "injected_graph_failure_rate": 0.1,
+      "tasks": 480,
+      "injected_failures": 48,
+      "misleading_high_confidence": 12,
+      "policies": {
+        "graph_only": {
+          "correct": 432,
+          "localization_accuracy": 0.9,
+          "wilson_95pct": [
+            0.8699,
+            0.9237
+          ],
+          "mean_retrieval_calls": 1
+        },
+        "unconditional_fallback": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 2
+        },
+        "confidence_gated": {
+          "correct": 468,
+          "localization_accuracy": 0.975,
+          "wilson_95pct": [
+            0.9568,
+            0.9856
+          ],
+          "mean_retrieval_calls": 1.075
+        }
+      }
+    },
+    {
+      "injected_graph_failure_rate": 0.25,
+      "tasks": 480,
+      "injected_failures": 116,
+      "misleading_high_confidence": 34,
+      "policies": {
+        "graph_only": {
+          "correct": 364,
+          "localization_accuracy": 0.7583,
+          "wilson_95pct": [
+            0.7181,
+            0.7945
+          ],
+          "mean_retrieval_calls": 1
+        },
+        "unconditional_fallback": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 2
+        },
+        "confidence_gated": {
+          "correct": 446,
+          "localization_accuracy": 0.9292,
+          "wilson_95pct": [
+            0.9026,
+            0.9489
+          ],
+          "mean_retrieval_calls": 1.1708
+        }
+      }
+    },
+    {
+      "injected_graph_failure_rate": 0.5,
+      "tasks": 480,
+      "injected_failures": 245,
+      "misleading_high_confidence": 53,
+      "policies": {
+        "graph_only": {
+          "correct": 235,
+          "localization_accuracy": 0.4896,
+          "wilson_95pct": [
+            0.4451,
+            0.5342
+          ],
+          "mean_retrieval_calls": 1
+        },
+        "unconditional_fallback": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 2
+        },
+        "confidence_gated": {
+          "correct": 427,
+          "localization_accuracy": 0.8896,
+          "wilson_95pct": [
+            0.8584,
+            0.9146
+          ],
+          "mean_retrieval_calls": 1.4
+        }
+      }
+    },
+    {
+      "injected_graph_failure_rate": 0.75,
+      "tasks": 480,
+      "injected_failures": 370,
+      "misleading_high_confidence": 93,
+      "policies": {
+        "graph_only": {
+          "correct": 110,
+          "localization_accuracy": 0.2292,
+          "wilson_95pct": [
+            0.1938,
+            0.2688
+          ],
+          "mean_retrieval_calls": 1
+        },
+        "unconditional_fallback": {
+          "correct": 480,
+          "localization_accuracy": 1,
+          "wilson_95pct": [
+            0.9921,
+            1
+          ],
+          "mean_retrieval_calls": 2
+        },
+        "confidence_gated": {
+          "correct": 387,
+          "localization_accuracy": 0.8063,
+          "wilson_95pct": [
+            0.7685,
+            0.8391
+          ],
+          "mean_retrieval_calls": 1.5771
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Retrieval failures and confidence are simulated, not a trained graph model.",
+    "Exact identifier string is supplied in each issue in this proxy test.",
+    "Unique symbol filter makes lexical recovery easier than realistic issues.",
+    "Repeated scenarios share tasks and are not statistically independent.",
+    "No model runs, human patch review, hidden tests, or official score."
+  ]
+}
