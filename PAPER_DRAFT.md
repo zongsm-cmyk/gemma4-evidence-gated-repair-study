@@ -2,7 +2,7 @@
 
 **Mhamed Askoure** — Original research working paper, 1 November 2026
 
-**Target:** [Google Gemma 4 Developer Agent Paper Track](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper). **Status:** published research draft; **not an officially submitted Kaggle Writeup**.
+**Target:** [Google Gemma 4 Developer Agent Paper Track](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper). **Current status (verified November 7, 2026):** [official Kaggle Writeup submitted](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/evidence-gated-repository-repair-with-gemma-4-a-b). This longer manuscript is the open reproducibility companion; submission does not mean a prize or cash was awarded.
 
 ## Abstract
 
@@ -87,11 +87,11 @@ At 50% injected graph faults, confidence-gated search used 1.3896 calls/query on
 
 Machine-readable follow-up receipts: [PostgreSQL, seed 20261111](results/postgres_holdout_seed_20261111.json) and [Kaggle CLI, seed 20261112](results/kaggle_cli_holdout_seed_20261112.json). Receipt arithmetic and provenance checks are supplied in [the test suite](studies/test_research_receipts.py).
 
-### 3.4 Official competition status and non-comparability (verified 1 November 2026)
+### 3.4 Official competition status and non-comparability (updated 7 November 2026)
 
 The authenticated Kaggle submission page separately reports **Gemma4 B24 E4B Budgeted Agent, version 1: Succeeded, public score 0.03**. This is an official score for the owner's B24 E4B entry, **not** an outcome of the simulated retrieval study above and not evidence that the confidence gate improves patch acceptance. The **Gemma4 B25 Apache2 Baseline Reproduction, version 1** is now officially marked **Succeeded**, with **public score 0.15** as verified on 3 November 2026 from the owner's authenticated Kaggle submissions page. This is the owner's official score for an attributed Apache-2.0 reference reproduction, not a result of the simulator or the original reference author's reported score. B25 reproduces and credits a separate Apache-2.0 reference, and the reference author's score must not be attributed to this account. The B26 conditional-graph ablation has a completed private packaging notebook but **no scored competition submission**. Historical entries remain exception/timeout cases.
 
-These are not matched experiments: B24 uses the E4B model, B25 uses a 31B model, and their tool budgets/prompts differ. Therefore no causal effect of retrieval gating, verification, or model size can be inferred from their current leaderboard statuses. Official page: https://www.kaggle.com/competitions/gemma-4-developer-agent/submissions . The separate Paper Track Writeup remains **4/6 complete and not submitted** as of this check. This section records provenance and prevents the older paper-track draft's statement that no successful public score exists from being reused as current evidence.
+These are not matched experiments: B24 uses the E4B model, B25 uses a 31B model, and their tool budgets/prompts differ. Therefore no causal effect of retrieval gating, verification, or model size can be inferred from their current leaderboard statuses. Official page: https://www.kaggle.com/competitions/gemma-4-developer-agent/submissions . The separate Paper Track Writeup reached **6/6 complete and was officially submitted November 7, 2026**. The latest submitted version contains the reproducible retrieval-fault results and their explicit validity limits; this does not imply a winning score or paper-track prize. This section records provenance and prevents the older paper-track draft's statement that no successful public score exists from being reused as current evidence.
 
 ## 4. Threats to validity
 
@@ -118,4 +118,4 @@ A conditional fallback controller can improve localization accuracy over graph-o
 - Kaggle CLI open source code, https://github.com/Kaggle/kaggle-cli.
 - Organizer's PostgreSQL challenge source, https://github.com/igorsiecz/kaggle_postgre_challenge.
 
-**Status:** A public working paper; it is **not an official submitted Kaggle Writeup**, and no paper-track prize or score has been earned.
+**Status (November 7, 2026):** the [official Kaggle Paper Track Writeup is submitted](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/evidence-gated-repository-repair-with-gemma-4-a-b). This public manuscript is a more detailed supporting study. **No paper-track award, prize or cash receipt has been confirmed.**
