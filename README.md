@@ -2,7 +2,7 @@
 
 **Research by Mhamed Askoure, 2026-11-01.**
 
-This repository provides reproducible research assets for a paper investigating **conditional code-search fallback and bounded verification in Gemma 4 coding agents**. The Kaggle writeup is a separate artifact and is not officially submitted merely by publishing this repository.
+This repository provides reproducible research assets for a paper investigating **conditional code-search fallback and bounded verification in Gemma 4 coding agents**. The official Kaggle Writeup is **submitted** (November 7, 2026); publication of this repository alone was not a submission. The official submission and this supporting repository are separate artifacts.
 
 ## Empirical method
 
@@ -29,6 +29,6 @@ Source license: MIT for original benchmark code and documentation. Data extracte
 
 ## Paper track
 
-https://www.kaggle.com/competitions/gemma-4-developer-agent-paper
+[Official submitted Kaggle Paper Track Writeup (verified 'Submitted!' on November 7, 2026)](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/evidence-gated-repository-repair-with-gemma-4-a-b)
 
-Official Kaggle Writeup submission status must be verified independently.
+**Current verified status:** submitted to Kaggle. This does not imply acceptance, prize eligibility, judge ranking, award or cash receipt. Public research results are fault-injection simulations, not official Gemma patch-acceptance results.
